@@ -1,24 +1,26 @@
 # ImageDownloader
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/image/downloader`. To experiment with that code, run `bin/console` for an interactive prompt.
+ImageDownloader is a simple gem for bulk-downloading images. It accepts the file_path of a .txt file containing whitespace-seperated image URLs and then attempts to download each image. If it fails to download an image, it logs the errors that were raised.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add the gem to an existing Ruby application:
 
-Install the gem and add to the application's Gemfile by executing:
+    $ gem 'image-downloader', git: 'git://github.com/danielbonnell/image-downloader.git'
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+Using the gem from the command line:
 
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ gem install image-downloader -s https://github.com/danielbonnell/
 
 ## Usage
 
-TODO: Write usage instructions here
+If using from the command line:
+
+    $ rake exec['path/to/file.txt']
+
+If using within a Ruby application:
+
+    $ ImageDownloader::Client.new(file_path: 'path/to/file.txt').call
 
 ## Development
 
@@ -28,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/image-downloader.
+Bug reports and pull requests are welcome on GitHub at https://github.com/danielbonnell/image-downloader.
 
 ## License
 

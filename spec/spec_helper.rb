@@ -12,4 +12,10 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.after(:each) do
+    Dir[File.expand_path(File.join(File.dirname(__FILE__), '..', 'downloaded-images-*'))].each do |path|
+      FileUtils.rm_rf(path)
+    end
+  end
 end
